@@ -23,16 +23,15 @@
     export default {
         computed: {
             products() {
-                // console.log(this.$store.getters.cart/cartTotal)
-                return this.$store.getters.cartProduct
+                return this.$store.getters['cart/cartProduct']
             },
             total() {
-                return this.$store.getters.cartTotal
+                return this.$store.getters['cart/cartTotal']
             }
         },
         methods: {
             checkout() {
-                this.$store.dispatch('checkout')
+                this.$store.dispatch('cart/checkout')
             }
         }
     }
