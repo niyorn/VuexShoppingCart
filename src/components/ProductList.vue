@@ -1,8 +1,8 @@
 <template>
-    <section>
+    <section class="product-list-container">
         <h1>Product List</h1>
         <loader v-if="loading"/>
-        <ul v-else>
+        <ul v-else class="product-container">
             <li v-for="product in products" :key="product.id">
                 {{product.title}} - {{product.price}} - {{product.inventory}}
                 <button 
@@ -50,12 +50,33 @@ export default {
 </script>
 
 <style scoped>
-    .loader {
-        height: 4rem;
-        width: 4rem;
-        background-color: red;
+    .product-list-container {
+        grid-area: product;
+        padding: 2rem;
     }
 
+    h1 {
+        font-size: 3em;
+        border-bottom: solid 0.1rem rgba(0, 0, 0, 0.7);
+        margin-bottom: 1rem;
+    }
 
+    .product-container {
+        list-style: none;
+    }
+
+    .product-container li {
+        padding: 0.2rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .product-container li button {
+        margin-left: auto;
+        padding: 0.4rem;
+        border: none;
+        background-color: aquamarine;
+    }
 </style>
 

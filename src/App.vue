@@ -25,7 +25,21 @@ export default {
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 #app {
   font-family: sans-serif;
+  display: grid;
+  grid-template-areas: "product cart";
+  height: 100%;
+}
+
+@media screen and (max-width: 47em){
+  #app {
+    grid-template-areas: "product"
+                         "cart"
+  };
 }
 </style>
