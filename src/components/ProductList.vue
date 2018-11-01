@@ -1,7 +1,7 @@
 <template>
     <section>
         <h1>Product List</h1>
-        <div v-if="loading" class="loader"></div>
+        <loader v-if="loading"/>
         <ul v-else>
             <li v-for="product in products" :key="product.id">
                 {{product.title}} - {{product.price}} - {{product.inventory}}
@@ -17,12 +17,16 @@
 
 <script>
 import {mapState} from 'vuex'
+import Loader from './Loader.vue'
 
 export default {
     data() {
         return {
             loading: false
         }
+    },
+    components: {
+        Loader
     },
     computed: {
         products() {
